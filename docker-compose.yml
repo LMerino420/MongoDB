@@ -1,0 +1,21 @@
+#Version del yml
+version: "3.9"
+
+#Definiendo servicio
+services:
+  #nombre del servicio
+  mongodb:
+    #Version de mongo (Drivers a utilizar)
+    image: mongo:5.0
+    #Puerto para correr el servicio
+    ports:
+      - 27017:27017
+    #Variables de entorno
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root123
+    #Almacenar estados
+    volumes:
+      - mongodata:/data/db
+volumes:
+  mongodata:
